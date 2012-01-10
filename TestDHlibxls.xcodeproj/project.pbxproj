@@ -1,0 +1,361 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE9798C614BC7FF8006E5AC2 /* test.xls in Resources */ = {isa = PBXBuildFile; fileRef = DE9798C514BC7FF8006E5AC2 /* test.xls */; };
+		DE9798C814BC8349006E5AC2 /* libDHxlsReaderIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78B9A14BC7D9700845894 /* libDHxlsReaderIOS.a */; };
+		DE9798CD14BC83C1006E5AC2 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9798CC14BC83C1006E5AC2 /* libiconv.dylib */; };
+		DEB78B7514BC7D4400845894 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78B7414BC7D4400845894 /* UIKit.framework */; };
+		DEB78B7714BC7D4400845894 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78B7614BC7D4400845894 /* Foundation.framework */; };
+		DEB78B7914BC7D4400845894 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78B7814BC7D4400845894 /* CoreGraphics.framework */; };
+		DEB78B7F14BC7D4400845894 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEB78B7D14BC7D4400845894 /* InfoPlist.strings */; };
+		DEB78B8114BC7D4400845894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78B8014BC7D4400845894 /* main.m */; };
+		DEB78B8514BC7D4400845894 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78B8414BC7D4400845894 /* AppDelegate.m */; };
+		DEB78B8814BC7D4400845894 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78B8714BC7D4400845894 /* ViewController.m */; };
+		DEB78B8B14BC7D4400845894 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB78B8914BC7D4400845894 /* ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DEB78B9914BC7D9700845894 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEB78B9514BC7D9600845894 /* DHxlsReaderIOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DEB78ABF14BB9ABF00845894;
+			remoteInfo = DHxlsReaderIOS;
+		};
+		DEB78BA714BC7E8700845894 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEB78B9514BC7D9600845894 /* DHxlsReaderIOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DEB78ABE14BB9ABF00845894;
+			remoteInfo = DHxlsReaderIOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE9798C714BC800C006E5AC2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DE9798C514BC7FF8006E5AC2 /* test.xls */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.xls; sourceTree = "<group>"; };
+		DE9798CC14BC83C1006E5AC2 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		DEB78B7014BC7D4400845894 /* TestDHlibxls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDHlibxls.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEB78B7414BC7D4400845894 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DEB78B7614BC7D4400845894 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DEB78B7814BC7D4400845894 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DEB78B7C14BC7D4400845894 /* TestDHlibxls-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestDHlibxls-Info.plist"; sourceTree = "<group>"; };
+		DEB78B7E14BC7D4400845894 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DEB78B8014BC7D4400845894 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DEB78B8214BC7D4400845894 /* TestDHlibxls-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestDHlibxls-Prefix.pch"; sourceTree = "<group>"; };
+		DEB78B8314BC7D4400845894 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DEB78B8414BC7D4400845894 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DEB78B8614BC7D4400845894 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DEB78B8714BC7D4400845894 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DEB78B8A14BC7D4400845894 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		DEB78B9514BC7D9600845894 /* DHxlsReaderIOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DHxlsReaderIOS.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DEB78B6D14BC7D4400845894 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE9798CD14BC83C1006E5AC2 /* libiconv.dylib in Frameworks */,
+				DE9798C814BC8349006E5AC2 /* libDHxlsReaderIOS.a in Frameworks */,
+				DEB78B7514BC7D4400845894 /* UIKit.framework in Frameworks */,
+				DEB78B7714BC7D4400845894 /* Foundation.framework in Frameworks */,
+				DEB78B7914BC7D4400845894 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DEB78B6514BC7D4400845894 = {
+			isa = PBXGroup;
+			children = (
+				DE9798C514BC7FF8006E5AC2 /* test.xls */,
+				DEB78B9514BC7D9600845894 /* DHxlsReaderIOS.xcodeproj */,
+				DEB78B7A14BC7D4400845894 /* TestDHlibxls */,
+				DEB78B7314BC7D4400845894 /* Frameworks */,
+				DEB78B7114BC7D4400845894 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DEB78B7114BC7D4400845894 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEB78B7014BC7D4400845894 /* TestDHlibxls.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEB78B7314BC7D4400845894 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE9798CC14BC83C1006E5AC2 /* libiconv.dylib */,
+				DEB78B7414BC7D4400845894 /* UIKit.framework */,
+				DEB78B7614BC7D4400845894 /* Foundation.framework */,
+				DEB78B7814BC7D4400845894 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEB78B7A14BC7D4400845894 /* TestDHlibxls */ = {
+			isa = PBXGroup;
+			children = (
+				DEB78B8314BC7D4400845894 /* AppDelegate.h */,
+				DEB78B8414BC7D4400845894 /* AppDelegate.m */,
+				DEB78B8614BC7D4400845894 /* ViewController.h */,
+				DEB78B8714BC7D4400845894 /* ViewController.m */,
+				DEB78B8914BC7D4400845894 /* ViewController.xib */,
+				DEB78B7B14BC7D4400845894 /* Supporting Files */,
+			);
+			path = TestDHlibxls;
+			sourceTree = "<group>";
+		};
+		DEB78B7B14BC7D4400845894 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DEB78B7C14BC7D4400845894 /* TestDHlibxls-Info.plist */,
+				DEB78B7D14BC7D4400845894 /* InfoPlist.strings */,
+				DEB78B8014BC7D4400845894 /* main.m */,
+				DEB78B8214BC7D4400845894 /* TestDHlibxls-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEB78B9614BC7D9600845894 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEB78B9A14BC7D9700845894 /* libDHxlsReaderIOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DEB78B6F14BC7D4400845894 /* TestDHlibxls */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEB78B8E14BC7D4400845894 /* Build configuration list for PBXNativeTarget "TestDHlibxls" */;
+			buildPhases = (
+				DEB78B6C14BC7D4400845894 /* Sources */,
+				DEB78B6D14BC7D4400845894 /* Frameworks */,
+				DEB78B6E14BC7D4400845894 /* Resources */,
+				DE9798C714BC800C006E5AC2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEB78BA814BC7E8700845894 /* PBXTargetDependency */,
+			);
+			name = TestDHlibxls;
+			productName = TestDHlibxls;
+			productReference = DEB78B7014BC7D4400845894 /* TestDHlibxls.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DEB78B6714BC7D4400845894 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = DEB78B6A14BC7D4400845894 /* Build configuration list for PBXProject "TestDHlibxls" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DEB78B6514BC7D4400845894;
+			productRefGroup = DEB78B7114BC7D4400845894 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DEB78B9614BC7D9600845894 /* Products */;
+					ProjectRef = DEB78B9514BC7D9600845894 /* DHxlsReaderIOS.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				DEB78B6F14BC7D4400845894 /* TestDHlibxls */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DEB78B9A14BC7D9700845894 /* libDHxlsReaderIOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDHxlsReaderIOS.a;
+			remoteRef = DEB78B9914BC7D9700845894 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DEB78B6E14BC7D4400845894 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE9798C614BC7FF8006E5AC2 /* test.xls in Resources */,
+				DEB78B7F14BC7D4400845894 /* InfoPlist.strings in Resources */,
+				DEB78B8B14BC7D4400845894 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DEB78B6C14BC7D4400845894 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEB78B8114BC7D4400845894 /* main.m in Sources */,
+				DEB78B8514BC7D4400845894 /* AppDelegate.m in Sources */,
+				DEB78B8814BC7D4400845894 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEB78BA814BC7E8700845894 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DHxlsReaderIOS;
+			targetProxy = DEB78BA714BC7E8700845894 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DEB78B7D14BC7D4400845894 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEB78B7E14BC7D4400845894 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DEB78B8914BC7D4400845894 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEB78B8A14BC7D4400845894 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DEB78B8C14BC7D4400845894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = DHxlsReaderIOS;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DEB78B8D14BC7D4400845894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = DHxlsReaderIOS;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEB78B8F14BC7D4400845894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestDHlibxls/TestDHlibxls-Prefix.pch";
+				INFOPLIST_FILE = "TestDHlibxls/TestDHlibxls-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DEB78B9014BC7D4400845894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestDHlibxls/TestDHlibxls-Prefix.pch";
+				INFOPLIST_FILE = "TestDHlibxls/TestDHlibxls-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DEB78B6A14BC7D4400845894 /* Build configuration list for PBXProject "TestDHlibxls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEB78B8C14BC7D4400845894 /* Debug */,
+				DEB78B8D14BC7D4400845894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEB78B8E14BC7D4400845894 /* Build configuration list for PBXNativeTarget "TestDHlibxls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEB78B8F14BC7D4400845894 /* Debug */,
+				DEB78B9014BC7D4400845894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DEB78B6714BC7D4400845894 /* Project object */;
+}
