@@ -1,7 +1,12 @@
 DHlibxls - An ObjectiveC Framework that can read MicroSoft Excel(TM) Files.
 
+**************************************************************
+*** IMPORTANT: This project does not yet run on the iPhone ***
+**************************************************************
+
 This Framework is based on the libxls open source project host on sourceforge.net:
-  xxxxx
+
+  http://sourceforge.net/projects/libxls/
   
 Usage: include the enclosed project in your primary Xcode project. Insure that there is a dependency
    on it in an Target that uses it. [It does not use categories so no need for "-forceload".]
