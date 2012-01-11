@@ -35,8 +35,8 @@
 @property (nonatomic, assign, readwrite) uint16_t row;
 @property (nonatomic, assign, readwrite) char *colStr;			// "A" ... "Z", "AA"..."ZZZ"
 @property (nonatomic, assign, readwrite) uint16_t col;
-@property (nonatomic, assign, readwrite) NSString *str;		// typeof depends on contentsType
-@property (nonatomic, assign, readwrite) NSNumber *val;		// typeof depends on contentsType
+@property (nonatomic, strong, readwrite) NSString *str;		// typeof depends on contentsType
+@property (nonatomic, strong, readwrite) NSNumber *val;		// typeof depends on contentsType
 
 
 @end

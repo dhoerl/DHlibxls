@@ -62,6 +62,7 @@
 	DHxlsReader			*reader;
 	xlsWorkBook			*workBook;
 
+NSLog(@"sizeof FORMULA=%zd LABELSST=%zd", sizeof(FORMULA), sizeof(LABELSST) );
 	const char *file = [filePath cStringUsingEncoding:NSUTF8StringEncoding];
 	if((workBook = xls_open(file, "UTF-8"))) {
 		reader = [DHxlsReader new];
@@ -286,7 +287,8 @@
 	if(!content.str) {
 		content.str = [NSString stringWithCString:(char *)cell->str encoding:NSUTF8StringEncoding];
 	}
-
+NSLog(@"GOING TO PRINT STRING");
+NSLog(@"Cell creator: t=%d num=%@ str=%@", content.type, content.val, content.str);
 }
 
 // Summary Information

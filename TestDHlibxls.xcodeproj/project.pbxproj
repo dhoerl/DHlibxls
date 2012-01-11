@@ -10,6 +10,7 @@
 		DE9798C614BC7FF8006E5AC2 /* test.xls in Resources */ = {isa = PBXBuildFile; fileRef = DE9798C514BC7FF8006E5AC2 /* test.xls */; };
 		DE9798C814BC8349006E5AC2 /* libDHxlsReaderIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78B9A14BC7D9700845894 /* libDHxlsReaderIOS.a */; };
 		DE9798CD14BC83C1006E5AC2 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9798CC14BC83C1006E5AC2 /* libiconv.dylib */; };
+		DE97994614BCD72E006E5AC2 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE97994514BCD72E006E5AC2 /* Icon.png */; };
 		DEB78B7514BC7D4400845894 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78B7414BC7D4400845894 /* UIKit.framework */; };
 		DEB78B7714BC7D4400845894 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78B7614BC7D4400845894 /* Foundation.framework */; };
 		DEB78B7914BC7D4400845894 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78B7814BC7D4400845894 /* CoreGraphics.framework */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		DE9798C514BC7FF8006E5AC2 /* test.xls */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.xls; sourceTree = "<group>"; };
 		DE9798CC14BC83C1006E5AC2 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		DE97994514BCD72E006E5AC2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		DEB78B7014BC7D4400845894 /* TestDHlibxls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDHlibxls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB78B7414BC7D4400845894 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DEB78B7614BC7D4400845894 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -130,6 +132,7 @@
 		DEB78B7B14BC7D4400845894 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DE97994514BCD72E006E5AC2 /* Icon.png */,
 				DEB78B7C14BC7D4400845894 /* TestDHlibxls-Info.plist */,
 				DEB78B7D14BC7D4400845894 /* InfoPlist.strings */,
 				DEB78B8014BC7D4400845894 /* main.m */,
@@ -217,6 +220,7 @@
 				DE9798C614BC7FF8006E5AC2 /* test.xls in Resources */,
 				DEB78B7F14BC7D4400845894 /* InfoPlist.strings in Resources */,
 				DEB78B8B14BC7D4400845894 /* ViewController.xib in Resources */,
+				DE97994614BCD72E006E5AC2 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +267,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DE97994314BCD581006E5AC2 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = DHxlsReaderIOS;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
+		DE97994414BCD581006E5AC2 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: David Hoerl";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: David Hoerl";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestDHlibxls/TestDHlibxls-Prefix.pch";
+				INFOPLIST_FILE = "TestDHlibxls/TestDHlibxls-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "72C7B295-C80D-4902-9440-074D16549E86";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "72C7B295-C80D-4902-9440-074D16549E86";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Distribution;
+		};
 		DEB78B8C14BC7D4400845894 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -271,8 +311,9 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -284,7 +325,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = DHxlsReaderIOS;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -297,13 +337,13 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = DHxlsReaderIOS;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -316,7 +356,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestDHlibxls/TestDHlibxls-Prefix.pch";
 				INFOPLIST_FILE = "TestDHlibxls/TestDHlibxls-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -328,7 +367,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestDHlibxls/TestDHlibxls-Prefix.pch";
 				INFOPLIST_FILE = "TestDHlibxls/TestDHlibxls-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -342,6 +380,7 @@
 			buildConfigurations = (
 				DEB78B8C14BC7D4400845894 /* Debug */,
 				DEB78B8D14BC7D4400845894 /* Release */,
+				DE97994314BCD581006E5AC2 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -351,6 +390,7 @@
 			buildConfigurations = (
 				DEB78B8F14BC7D4400845894 /* Debug */,
 				DEB78B9014BC7D4400845894 /* Release */,
+				DE97994414BCD581006E5AC2 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
