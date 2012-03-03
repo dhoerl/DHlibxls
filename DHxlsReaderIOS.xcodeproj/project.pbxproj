@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE2A39661502846600E4AF15 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2A39651502846600E4AF15 /* config.h */; };
 		DE9798CA14BC839E006E5AC2 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9798C914BC839E006E5AC2 /* libiconv.dylib */; };
 		DEB78AC314BB9ABF00845894 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78AC214BB9ABF00845894 /* Foundation.framework */; };
 		DEB78AC914BB9ABF00845894 /* DHxlsReaderIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78AC814BB9ABF00845894 /* DHxlsReaderIOS.m */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE2A39651502846600E4AF15 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		DE9798C914BC839E006E5AC2 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		DEB78ABF14BB9ABF00845894 /* libDHxlsReaderIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDHxlsReaderIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB78AC214BB9ABF00845894 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,6 +71,7 @@
 		DEB78AB414BB9ABF00845894 = {
 			isa = PBXGroup;
 			children = (
+				DE2A39651502846600E4AF15 /* config.h */,
 				DEB78B6314BC72D000845894 /* README */,
 				DEB78AC414BB9ABF00845894 /* DHxlsReaderIOS */,
 				DEB78ACF14BB9E6200845894 /* libxls */,
@@ -186,6 +189,7 @@
 				DEB78B3814BB9E6200845894 /* xlstypes.h in Headers */,
 				DEB78B5014BBA42300845894 /* DHcell.h in Headers */,
 				DEB78B5314BBA58300845894 /* DHcell-Private.h in Headers */,
+				DE2A39661502846600E4AF15 /* config.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
