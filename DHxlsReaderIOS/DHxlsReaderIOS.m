@@ -292,16 +292,16 @@ NSLog(@"Cell creator: t=%d num=%@ str=%@", content.type, content.val, content.st
 }
 
 // Summary Information
-- (NSString *)appName		{ return [NSString stringWithCString:(char *)summary->appName		encoding:NSUTF8StringEncoding]; }
-- (NSString *)author		{ return [NSString stringWithCString:(char *)summary->author		encoding:NSUTF8StringEncoding]; }
-- (NSString *)category		{ return [NSString stringWithCString:(char *)summary->category		encoding:NSUTF8StringEncoding]; }
-- (NSString *)comment		{ return [NSString stringWithCString:(char *)summary->comment		encoding:NSUTF8StringEncoding]; }
-- (NSString *)company		{ return [NSString stringWithCString:(char *)summary->company		encoding:NSUTF8StringEncoding]; }
-- (NSString *)keywords		{ return [NSString stringWithCString:(char *)summary->keywords		encoding:NSUTF8StringEncoding]; }
-- (NSString *)lastAuthor	{ return [NSString stringWithCString:(char *)summary->lastAuthor	encoding:NSUTF8StringEncoding]; }
-- (NSString *)manager		{ return [NSString stringWithCString:(char *)summary->manager		encoding:NSUTF8StringEncoding]; }
-- (NSString *)subject		{ return [NSString stringWithCString:(char *)summary->subject		encoding:NSUTF8StringEncoding]; }
-- (NSString *)title			{ return [NSString stringWithCString:(char *)summary->title			encoding:NSUTF8StringEncoding]; }
+- (NSString *)appName		{ return summary->appName	? [NSString stringWithCString:(char *)summary->appName		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)author		{ return summary->author	? [NSString stringWithCString:(char *)summary->author		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)category		{ return summary->category	? [NSString stringWithCString:(char *)summary->category		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)comment		{ return summary->comment	? [NSString stringWithCString:(char *)summary->comment		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)company		{ return summary->company	? [NSString stringWithCString:(char *)summary->company		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)keywords		{ return summary->keywords	? [NSString stringWithCString:(char *)summary->keywords		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)lastAuthor	{ return summary->lastAuthor? [NSString stringWithCString:(char *)summary->lastAuthor	encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)manager		{ return summary->manager	? [NSString stringWithCString:(char *)summary->manager		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)subject		{ return summary->subject	? [NSString stringWithCString:(char *)summary->subject		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)title			{ return summary->title		? [NSString stringWithCString:(char *)summary->title		encoding:NSUTF8StringEncoding] : @""; }
 
 @end
 
