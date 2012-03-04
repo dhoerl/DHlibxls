@@ -34,6 +34,10 @@
 #import "DHcell-Private.h"
 #import "xls.h"
 
+#if ! __has_feature(objc_arc)
+#error THIS CODE MUST BE COMPILED WITH ARC ENABLED!
+#endif
+ 
 
 @interface DHxlsReader ()
 
@@ -62,7 +66,7 @@
 	DHxlsReader			*reader;
 	xlsWorkBook			*workBook;
 
-NSLog(@"sizeof FORMULA=%zd LABELSST=%zd", sizeof(FORMULA), sizeof(LABELSST) );
+	// NSLog(@"sizeof FORMULA=%zd LABELSST=%zd", sizeof(FORMULA), sizeof(LABELSST) );
 	const char *file = [filePath cStringUsingEncoding:NSUTF8StringEncoding];
 	if((workBook = xls_open(file, "UTF-8"))) {
 		reader = [DHxlsReader new];
@@ -150,10 +154,11 @@ NSLog(@"sizeof FORMULA=%zd LABELSST=%zd", sizeof(FORMULA), sizeof(LABELSST) );
 		for (NSUInteger tt=0; tt<numCols; tt++)
 		{
 			xlsCell	*cell = &rowP->cells.cell[tt];
+NSLog(@"Looking for %d:%d:%d - testing %d:%d Type: 0x%4.4x  [t=%d tt=%d]", sheetNum, row, col, cell->row, cell->col, cell->id, t, tt);
 			if(cell->row < row) break;
 			if(cell->row > row) return content;
 			
-			if(cell->id == 0x201) continue;
+			if(cell->id == 0x201) continue;	// "Blank" filler cell created by libxls
 			
 			if(cell->col == col) {
 				[self formatContent:content withCell:cell];
@@ -287,8 +292,8 @@ NSLog(@"sizeof FORMULA=%zd LABELSST=%zd", sizeof(FORMULA), sizeof(LABELSST) );
 	if(!content.str) {
 		content.str = [NSString stringWithCString:(char *)cell->str encoding:NSUTF8StringEncoding];
 	}
-NSLog(@"GOING TO PRINT STRING");
-NSLog(@"Cell creator: t=%d num=%@ str=%@", content.type, content.val, content.str);
+	// NSLog(@"GOING TO PRINT STRING");
+	// NSLog(@"Cell creator: t=%d num=%@ str=%@", content.type, content.val, content.str);
 }
 
 // Summary Information

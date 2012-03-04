@@ -47,6 +47,7 @@
 	
 	text = [text stringByAppendingFormat:@"\n\nNumber of Sheets: %u\n", reader.numberOfSheets];
 
+#if 0
 	[reader startIterator:0];
 	
 	while(YES) {
@@ -55,7 +56,19 @@
 		
 		text = [text stringByAppendingFormat:@"\n%@\n", [cell dump]];
 	}
-
+#else
+    int row = 2;
+    while(YES) {
+        DHcell *cell = [reader cellInWorkSheetIndex:0 row:row col:2];
+        if(cell.type == cellBlank) break;        
+        DHcell *cell1 = [reader cellInWorkSheetIndex:0 row:row col:3];
+        NSLog(@"\nCell:%@\nCell1:%@\n", [cell dump], [cell1 dump]);
+        row++;
+		
+        //text = [text stringByAppendingFormat:@"\n%@\n", [cell dump]];
+        //text = [text stringByAppendingFormat:@"\n%@\n", [cell1 dump]];
+    }
+#endif
 	textView.text = text;
 }
 

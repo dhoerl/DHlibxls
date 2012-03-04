@@ -11,7 +11,6 @@
 		DE9798CA14BC839E006E5AC2 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9798C914BC839E006E5AC2 /* libiconv.dylib */; };
 		DEB78AC314BB9ABF00845894 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78AC214BB9ABF00845894 /* Foundation.framework */; };
 		DEB78AC914BB9ABF00845894 /* DHxlsReaderIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78AC814BB9ABF00845894 /* DHxlsReaderIOS.m */; };
-		DEB78B2C14BB9E6200845894 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB78AD814BB9E6200845894 /* config.h */; };
 		DEB78B3114BB9E6200845894 /* brdb.c.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB78AEF14BB9E6200845894 /* brdb.c.h */; };
 		DEB78B3214BB9E6200845894 /* brdb.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB78AF014BB9E6200845894 /* brdb.h */; };
 		DEB78B3414BB9E6200845894 /* ole.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB78AF414BB9E6200845894 /* ole.h */; };
@@ -35,7 +34,6 @@
 		DEB78AC614BB9ABF00845894 /* DHxlsReaderIOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DHxlsReaderIOS-Prefix.pch"; sourceTree = "<group>"; };
 		DEB78AC714BB9ABF00845894 /* DHxlsReaderIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHxlsReaderIOS.h; sourceTree = "<group>"; };
 		DEB78AC814BB9ABF00845894 /* DHxlsReaderIOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHxlsReaderIOS.m; sourceTree = "<group>"; };
-		DEB78AD814BB9E6200845894 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		DEB78AE214BB9E6200845894 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DEB78AE414BB9E6200845894 /* XlsReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XlsReader.cpp; sourceTree = "<group>"; };
 		DEB78AE514BB9E6200845894 /* XlsReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XlsReader.h; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 		DEB78ACF14BB9E6200845894 /* libxls */ = {
 			isa = PBXGroup;
 			children = (
-				DEB78AD814BB9E6200845894 /* config.h */,
 				DEB78AE114BB9E6200845894 /* cplusplus */,
 				DEB78AEB14BB9E6200845894 /* include */,
 				DEB78B0D14BB9E6200845894 /* src */,
@@ -179,7 +176,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEB78B2C14BB9E6200845894 /* config.h in Headers */,
 				DEB78B3114BB9E6200845894 /* brdb.c.h in Headers */,
 				DEB78B3214BB9E6200845894 /* brdb.h in Headers */,
 				DEB78B3414BB9E6200845894 /* ole.h in Headers */,
