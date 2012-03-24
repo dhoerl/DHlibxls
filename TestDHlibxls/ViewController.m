@@ -10,6 +10,8 @@
 
 #import "DHxlsReaderIOS.h"
 
+extern int xls_debug;
+
 @implementation ViewController
 {
 	IBOutlet UITextView *textView;
@@ -28,6 +30,9 @@
     [super viewDidLoad];
 
 	NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"test.xls"];
+//	NSString *path = @"/tmp/test.xls";
+
+	// xls_debug = 1; // good way to see everything in the Excel file
 	
 	DHxlsReader *reader = [DHxlsReader xlsReaderFromFile:path];
 	assert(reader);
