@@ -177,7 +177,7 @@
 		DEB78B6714BC7D4400845894 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = DEB78B6A14BC7D4400845894 /* Build configuration list for PBXProject "TestDHlibxls" */;
 			compatibilityVersion = "Xcode 3.2";
