@@ -13,6 +13,5 @@ Building: the github repository does not include the libxls source - the Xcode p
    
 Run the Test project to see the framework in action (and how to wire it up).
 
-License: the ObjectiveC components use a BSD license, but be aware that the 
-  C libxls source is currently under the LGPL license.
+License: BSD license
 
