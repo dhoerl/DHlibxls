@@ -247,7 +247,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -d ./libxls ]\nthen\n    cd libxls\n    svn update\nelse\n    svn co https://libxls.svn.sourceforge.net/svnroot/libxls/trunk/libxls libxls\nfi";
+			shellScript = "#if [ -d ./libxls ]\n#then\n#    cd libxls\n#    svn update\n#else\n#    svn co https://libxls.svn.sourceforge.net/svnroot/libxls/trunk/libxls libxls\n#fi";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
