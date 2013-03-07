@@ -13,5 +13,8 @@ Building: the github repository does not include the libxls source - the Xcode p
    
 Run the Test project to see the framework in action (and how to wire it up).
 
+To get step by step instructions on how to include DHxlsReaderIOS.xcodeproj into your Xcode project, see:
+  http://pymatics.com/2011/12/23/tutorial-develop-a-private-framework-for-your-mac-app-using-xcode-4s-workspace-feature/
+
 License: BSD license
 
