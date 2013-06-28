@@ -113,6 +113,13 @@
 	return idx < numSheets ? [NSString stringWithCString:(char *)workBook->sheets.sheet[idx].name encoding:NSUTF8StringEncoding] : nil;
 }
 
+- (NSUInteger)rowsForSheetAtIndex:(NSUInteger)idx
+{
+    [self openSheet:idx];
+    NSUInteger numRows = activeWorkSheet->rows.lastrow + 1;
+	return idx < numSheets ? numRows : 0;
+}
+
 - (BOOL)isSheetVisibleAtIndex:(NSUInteger)idx
 {
 	return idx < numSheets ? (BOOL)workBook->sheets.sheet[idx].visibility : NO;
