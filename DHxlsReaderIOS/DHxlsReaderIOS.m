@@ -59,15 +59,22 @@
 	BOOL				iterating;
 	uint32_t			lastRowIndex;
 	uint32_t			lastColIndex;
+	
+	NSStringEncoding	encoding;
 }
 
 + (DHxlsReader *)xlsReaderFromFile:(NSString *)filePath
+{
+	return [self xlsReaderFromFile:filePath encoding:NSUTF8StringEncoding];
+}
+
++ (DHxlsReader *)xlsReaderFromFile:(NSString *)filePath encoding:(NSStringEncoding)encoding
 {
 	DHxlsReader			*reader;
 	xlsWorkBook			*workBook;
 
 	// NSLog(@"sizeof FORMULA=%zd LABELSST=%zd", sizeof(FORMULA), sizeof(LABELSST) );
-	const char *file = [filePath cStringUsingEncoding:NSUTF8StringEncoding];
+	const char *file = [filePath cStringUsingEncoding:encoding];
 	if((workBook = xls_open(file, "UTF-8"))) {
 		reader = [DHxlsReader new];
 		[reader setWorkBook:workBook];
@@ -79,6 +86,7 @@
 {
 	if((self = [super init])) {
 		activeWorkSheetID = DHWorkSheetNotFound;
+		encoding = NSUTF8StringEncoding;
 	}
 	return self;
 }
@@ -110,7 +118,7 @@
 
 - (NSString *)sheetNameAtIndex:(uint32_t)idx
 {
-	return idx < numSheets ? [NSString stringWithCString:(char *)workBook->sheets.sheet[idx].name encoding:NSUTF8StringEncoding] : nil;
+	return idx < numSheets ? [NSString stringWithCString:(char *)workBook->sheets.sheet[idx].name encoding:encoding] : nil;
 }
 
 - (uint16_t)rowsForSheetAtIndex:(uint32_t)idx

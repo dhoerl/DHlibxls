@@ -38,6 +38,7 @@ enum {DHWorkSheetNotFound = UINT32_MAX};
 @interface DHxlsReader : NSObject
 
 + (DHxlsReader *)xlsReaderFromFile:(NSString *)filePath;
++ (DHxlsReader *)xlsReaderFromFile:(NSString *)filePath encoding:(NSStringEncoding)encoding;
 
 - (NSString *)libaryVersion;
 
