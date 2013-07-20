@@ -274,7 +274,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEB78ACC14BB9ABF00845894 /* Build configuration list for PBXNativeTarget "DHxlsReaderIOS" */;
 			buildPhases = (
-				DEB78B6414BC793700845894 /* ShellScript */,
 				DEB78ABB14BB9ABF00845894 /* Sources */,
 				DEB78ABC14BB9ABF00845894 /* Frameworks */,
 				DEB78ABD14BB9ABF00845894 /* Headers */,
@@ -313,23 +312,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		DEB78B6414BC793700845894 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#if [ -d ./libxls ]\n#then\n#    cd libxls\n#    svn update\n#else\n#    svn co https://libxls.svn.sourceforge.net/svnroot/libxls/trunk/libxls libxls\n#fi";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		97BCBBE316DD4E9A00FF978C /* Sources */ = {

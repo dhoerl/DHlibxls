@@ -17,5 +17,3 @@ profile
 ## Ignore incredibly annoying .DS_Store files
 .DS_Store
 Thumbs.db
-
-libxls/
