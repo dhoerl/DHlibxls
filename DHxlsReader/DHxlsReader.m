@@ -29,7 +29,7 @@
  */
 
 
-#import "DHxlsReaderIOS.h"
+#import "DHxlsReader.h"
 
 #import "DHcell-Private.h"
 #import "xls.h"

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		97BCBBE916DD4E9A00FF978C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BCBBE816DD4E9A00FF978C /* Cocoa.framework */; };
-		97BCBBF816DD4EBD00FF978C /* DHxlsReaderIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78AC814BB9ABF00845894 /* DHxlsReaderIOS.m */; };
+		97BCBBF816DD4EBD00FF978C /* DHxlsReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78AC814BB9ABF00845894 /* DHxlsReader.m */; };
 		97BCBBF916DD4EBD00FF978C /* DHcell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78B4F14BBA42300845894 /* DHcell.m */; };
 		97BCBBFA16DD4EBD00FF978C /* ole.c in Sources */ = {isa = PBXBuildFile; fileRef = DEB78B1914BB9E6200845894 /* ole.c */; };
 		97BCBBFB16DD4EBD00FF978C /* xls.c in Sources */ = {isa = PBXBuildFile; fileRef = DEB78B1A14BB9E6200845894 /* xls.c */; };
@@ -16,7 +16,7 @@
 		DE2A39661502846600E4AF15 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2A39651502846600E4AF15 /* config.h */; };
 		DE9798CA14BC839E006E5AC2 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9798C914BC839E006E5AC2 /* libiconv.dylib */; };
 		DEB78AC314BB9ABF00845894 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78AC214BB9ABF00845894 /* Foundation.framework */; };
-		DEB78AC914BB9ABF00845894 /* DHxlsReaderIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78AC814BB9ABF00845894 /* DHxlsReaderIOS.m */; };
+		DEB78AC914BB9ABF00845894 /* DHxlsReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78AC814BB9ABF00845894 /* DHxlsReader.m */; };
 		DEB78B3114BB9E6200845894 /* brdb.c.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB78AEF14BB9E6200845894 /* brdb.c.h */; };
 		DEB78B3214BB9E6200845894 /* brdb.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB78AF014BB9E6200845894 /* brdb.h */; };
 		DEB78B3414BB9E6200845894 /* ole.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB78AF414BB9E6200845894 /* ole.h */; };
@@ -44,8 +44,8 @@
 		DEB78ABF14BB9ABF00845894 /* libDHxlsReaderIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDHxlsReaderIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB78AC214BB9ABF00845894 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DEB78AC614BB9ABF00845894 /* DHxlsReaderIOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DHxlsReaderIOS-Prefix.pch"; sourceTree = "<group>"; };
-		DEB78AC714BB9ABF00845894 /* DHxlsReaderIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHxlsReaderIOS.h; sourceTree = "<group>"; };
-		DEB78AC814BB9ABF00845894 /* DHxlsReaderIOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHxlsReaderIOS.m; sourceTree = "<group>"; };
+		DEB78AC714BB9ABF00845894 /* DHxlsReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHxlsReader.h; sourceTree = "<group>"; };
+		DEB78AC814BB9ABF00845894 /* DHxlsReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHxlsReader.m; sourceTree = "<group>"; };
 		DEB78AE214BB9E6200845894 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DEB78AE414BB9E6200845894 /* XlsReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XlsReader.cpp; sourceTree = "<group>"; };
 		DEB78AE514BB9E6200845894 /* XlsReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XlsReader.h; sourceTree = "<group>"; };
@@ -99,6 +99,11 @@
 		97BCBBEE16DD4E9A00FF978C /* DHxlsReader */ = {
 			isa = PBXGroup;
 			children = (
+				DEB78AC714BB9ABF00845894 /* DHxlsReader.h */,
+				DEB78AC814BB9ABF00845894 /* DHxlsReader.m */,
+				DEB78B4E14BBA42300845894 /* DHcell.h */,
+				DEB78B4F14BBA42300845894 /* DHcell.m */,
+				DEB78B5214BBA58300845894 /* DHcell-Private.h */,
 				97BCBBEF16DD4E9A00FF978C /* Supporting Files */,
 			);
 			path = DHxlsReader;
@@ -117,10 +122,9 @@
 			children = (
 				DE2A39651502846600E4AF15 /* config.h */,
 				DEB78B6314BC72D000845894 /* README.md */,
-				DEB78AC414BB9ABF00845894 /* DHxlsReaderIOS */,
+				97BCBBEE16DD4E9A00FF978C /* DHxlsReader */,
 				DEB78ACF14BB9E6200845894 /* libxls */,
 				DEB78AC514BB9ABF00845894 /* Supporting Files */,
-				97BCBBEE16DD4E9A00FF978C /* DHxlsReader */,
 				DEB78AC114BB9ABF00845894 /* Frameworks */,
 				DEB78AC014BB9ABF00845894 /* Products */,
 			);
@@ -144,18 +148,6 @@
 				97BCBBEA16DD4E9A00FF978C /* Other Frameworks */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DEB78AC414BB9ABF00845894 /* DHxlsReaderIOS */ = {
-			isa = PBXGroup;
-			children = (
-				DEB78AC714BB9ABF00845894 /* DHxlsReaderIOS.h */,
-				DEB78AC814BB9ABF00845894 /* DHxlsReaderIOS.m */,
-				DEB78B4E14BBA42300845894 /* DHcell.h */,
-				DEB78B4F14BBA42300845894 /* DHcell.m */,
-				DEB78B5214BBA58300845894 /* DHcell-Private.h */,
-			);
-			path = DHxlsReaderIOS;
 			sourceTree = "<group>";
 		};
 		DEB78AC514BB9ABF00845894 /* Supporting Files */ = {
@@ -314,7 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97BCBBF816DD4EBD00FF978C /* DHxlsReaderIOS.m in Sources */,
+				97BCBBF816DD4EBD00FF978C /* DHxlsReader.m in Sources */,
 				97BCBBF916DD4EBD00FF978C /* DHcell.m in Sources */,
 				97BCBBFA16DD4EBD00FF978C /* ole.c in Sources */,
 				97BCBBFB16DD4EBD00FF978C /* xls.c in Sources */,
@@ -326,7 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEB78AC914BB9ABF00845894 /* DHxlsReaderIOS.m in Sources */,
+				DEB78AC914BB9ABF00845894 /* DHxlsReader.m in Sources */,
 				DEB78B3D14BB9E6200845894 /* ole.c in Sources */,
 				DEB78B3E14BB9E6200845894 /* xls.c in Sources */,
 				DEB78B4014BB9E6200845894 /* xlstool.c in Sources */,

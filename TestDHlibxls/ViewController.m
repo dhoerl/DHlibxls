@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "DHxlsReaderIOS.h"
+#import "DHxlsReader.h"
 
 extern int xls_debug;
 
