@@ -43,7 +43,7 @@
 
 - (void)setWorkBook:(xlsWorkBook *)wb;
 
-- (void)openSheet:(NSUInteger)sheetNum;
+- (void)openSheet:(uint32_t)sheetNum;
 - (void)formatContent:(DHcell *)content withCell:(xlsCell *)cell;
 
 @end
@@ -78,7 +78,7 @@
 - (id)init
 {
 	if((self = [super init])) {
-		activeWorkSheetID = NSNotFound;
+		activeWorkSheetID = DHWorkSheetNotFound;
 	}
 	return self;
 }
@@ -103,17 +103,17 @@
 }
 
 // Sheet Information
-- (NSUInteger)numberOfSheets
+- (uint32_t)numberOfSheets
 {
 	return numSheets;
 }
 
-- (NSString *)sheetNameAtIndex:(NSUInteger)idx
+- (NSString *)sheetNameAtIndex:(uint32_t)idx
 {
 	return idx < numSheets ? [NSString stringWithCString:(char *)workBook->sheets.sheet[idx].name encoding:NSUTF8StringEncoding] : nil;
 }
 
-- (NSUInteger)rowsForSheetAtIndex:(NSUInteger)idx
+- (uint16_t)rowsForSheetAtIndex:(uint32_t)idx
 {
     [self openSheet:idx];
     NSUInteger numRows = activeWorkSheet->rows.lastrow + 1;
@@ -125,7 +125,7 @@
 	return idx < numSheets ? (BOOL)workBook->sheets.sheet[idx].visibility : NO;
 }
 
-- (void)openSheet:(NSUInteger)sheetNum
+- (void)openSheet:(uint32_t)sheetNum
 {	
 	if(sheetNum >= numSheets) {
 		iterating = true;
@@ -140,26 +140,26 @@
 	}
 }
 
-- (NSUInteger)numberOfRowsInSheet:(NSUInteger)sheetIndex
+- (uint16_t)numberOfRowsInSheet:(uint32_t)sheetIndex
 {
     [self openSheet:sheetIndex];
     return activeWorkSheet->rows.lastrow + 1;
 }
 
-- (NSUInteger)numberOfColsInSheet:(NSUInteger)sheetIndex
+- (uint16_t)numberOfColsInSheet:(uint32_t)sheetIndex
 {
     [self openSheet:sheetIndex];
     return activeWorkSheet->rows.lastcol + 1;
 }
 
 // Random Access
-- (DHcell *)cellInWorkSheetIndex:(NSUInteger)sheetNum row:(uint16_t)row col:(uint16_t)col
+- (DHcell *)cellInWorkSheetIndex:(uint32_t)sheetNum row:(uint16_t)row col:(uint16_t)col
 {
 	DHcell *content = [DHcell blankCell];
 	
 	assert(row && col);
 
-	[self startIterator:NSNotFound];
+	[self startIterator:DHWorkSheetNotFound];
 	[self openSheet:sheetNum];
 	
 	--row, --col;
@@ -189,7 +189,7 @@
 	return content;
 }
 
-- (DHcell *)cellInWorkSheetIndex:(NSUInteger)sheetNum row:(uint16_t)row colStr:(char *)colStr
+- (DHcell *)cellInWorkSheetIndex:(uint32_t)sheetNum row:(uint16_t)row colStr:(char *)colStr
 {
 	if(strlen(colStr) > 2 || strlen(colStr) == 0) return [DHcell blankCell];
 
@@ -208,9 +208,9 @@
 }
 
 // Iterate through all cells
-- (void)startIterator:(NSUInteger)sheetNum
+- (void)startIterator:(uint32_t)sheetNum
 {
-	if(sheetNum != NSNotFound) {
+	if(sheetNum != DHWorkSheetNotFound) {
 		[self openSheet:sheetNum];
 		iterating = true;
 		lastColIndex = 0;
@@ -234,7 +234,7 @@
 	for (NSUInteger t=lastRowIndex; t<numRows; t++)
 	{
 		xlsRow *rowP = &activeWorkSheet->rows.row[t];
-		for (NSUInteger tt=lastColIndex; tt<numCols; tt++)
+		for (uint32_t tt=lastColIndex; tt<numCols; tt++)
 		{
 			xlsCell	*cell = &rowP->cells.cell[tt];
 			
@@ -284,10 +284,11 @@
 				content.str = b ? @"YES" : @"NO";
 			} else
 			if(!strcmp((char *)cell->str, "error")) {
+				// FIXME: Why do we convert the double cell->d to NSInteger?
 				NSInteger err = (NSInteger)cell->d;
 				content.type = cellError;
 				content.val = [NSNumber numberWithInteger:err];
-				content.str = [NSString stringWithFormat:@"%d", err];
+				content.str = [NSString stringWithFormat:@"%ld", (long)err];
 			} else {
 				content.type = cellString;
 			}
