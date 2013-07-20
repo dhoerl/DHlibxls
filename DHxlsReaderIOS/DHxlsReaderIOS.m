@@ -63,12 +63,12 @@
 	NSStringEncoding	encoding;
 }
 
-+ (DHxlsReader *)xlsReaderFromFile:(NSString *)filePath
++ (DHxlsReader *)xlsReaderWithPath:(NSString *)filePath
 {
-	return [self xlsReaderFromFile:filePath encoding:NSUTF8StringEncoding];
+	return [self xlsReaderWithPath:filePath encoding:NSUTF8StringEncoding];
 }
 
-+ (DHxlsReader *)xlsReaderFromFile:(NSString *)filePath encoding:(NSStringEncoding)encoding
++ (DHxlsReader *)xlsReaderWithPath:(NSString *)filePath encoding:(NSStringEncoding)encoding
 {
 	DHxlsReader			*reader;
 	xlsWorkBook			*workBook;
@@ -81,6 +81,12 @@
 	}
 	return reader;
 }
+
++ (DHxlsReader *)xlsReaderFromFile:(NSString *)filePath
+{
+	return [self xlsReaderWithPath:filePath encoding:NSUTF8StringEncoding];
+}
+
 
 - (id)init
 {
