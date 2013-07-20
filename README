@@ -1,4 +1,4 @@
-DHlibxls - An ObjectiveC Framework that can read MicroSoft Excel(TM) Files.
+# DHlibxls - An ObjectiveC Framework that can read MicroSoft Excel(TM) Files.
 
 This Framework is based on the libxls open source project host on sourceforge.net:
 
@@ -7,9 +7,15 @@ This Framework is based on the libxls open source project host on sourceforge.ne
 Usage: include the enclosed project in your primary Xcode project. Insure that there is a dependency
   on it in an Target that uses it. [It does not use categories so no need for "-forceload".]
 
-Building: the github repository does not include the libxls source - the Xcode project downloads it 
-  when you run your first build. From then on, every build does an "svn update" in the source to 
-  insure it's up-to-date.
+Building: the github repository includes the libxls source via a git submodule. Don’t forget to 
+
+	git submodule update --init --recursive
+
+the first time you clone the repository. From then on use
+
+	git submodule update
+
+to insure it’s up-to-date.
    
 Run the Test project to see the framework in action (and how to wire it up).
 
@@ -21,5 +27,9 @@ If you have problems, or you just want to be sure the build should work, open Te
   svn co https://libxls.svn.sourceforge.net/svnroot/libxls/trunk/libxls libxls
 
 If that does not work then you have to figure out why (did you install the Xcode command line tools?), or maybe it will ask you to confirm the remote side. Once it works without prompting you for any information the project should build.
-License: BSD license
+
+
+## License
+
+BSD license
 
