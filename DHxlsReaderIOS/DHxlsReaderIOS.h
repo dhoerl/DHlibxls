@@ -40,6 +40,7 @@
 // Sheet Information
 - (NSUInteger)numberOfSheets;
 - (NSString *)sheetNameAtIndex:(NSUInteger)index;
+- (NSUInteger)rowsForSheetAtIndex:(NSUInteger)index;
 - (BOOL)isSheetVisibleAtIndex:(NSUInteger)index;
 - (NSUInteger)numberOfRowsInSheet:(NSUInteger)sheetIndex;
 - (NSUInteger)numberOfColsInSheet:(NSUInteger)sheetIndex;
