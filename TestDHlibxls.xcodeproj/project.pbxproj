@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DA903DC179ABE8F006C2EF2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DA903DB179ABE8F006C2EF2 /* Default-568h@2x.png */; };
 		DE9798C614BC7FF8006E5AC2 /* test.xls in Resources */ = {isa = PBXBuildFile; fileRef = DE9798C514BC7FF8006E5AC2 /* test.xls */; };
 		DE9798C814BC8349006E5AC2 /* libDHxlsReaderIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78B9A14BC7D9700845894 /* libDHxlsReaderIOS.a */; };
 		DE9798CD14BC83C1006E5AC2 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9798CC14BC83C1006E5AC2 /* libiconv.dylib */; };
@@ -52,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3DA903DB179ABE8F006C2EF2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DE9798C514BC7FF8006E5AC2 /* test.xls */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.xls; sourceTree = "<group>"; };
 		DE9798CC14BC83C1006E5AC2 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		DE97994514BCD72E006E5AC2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		DEB78B6514BC7D4400845894 = {
 			isa = PBXGroup;
 			children = (
+				3DA903DB179ABE8F006C2EF2 /* Default-568h@2x.png */,
 				DEF79AD316E8E60F00E4B803 /* README */,
 				DE9798C514BC7FF8006E5AC2 /* test.xls */,
 				DEB78B9514BC7D9600845894 /* DHxlsReaderIOS.xcodeproj */,
@@ -225,6 +228,7 @@
 				DEB78B8B14BC7D4400845894 /* ViewController.xib in Resources */,
 				DE97994614BCD72E006E5AC2 /* Icon.png in Resources */,
 				DEF79AD416E8E60F00E4B803 /* README in Resources */,
+				3DA903DC179ABE8F006C2EF2 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
