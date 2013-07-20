@@ -50,17 +50,17 @@
 
 @implementation DHxlsReader
 {
-	xlsWorkBook			*workBook;
-	uint32_t			numSheets;
-	uint32_t			activeWorkSheetID;		// keep last one active
-	xlsWorkSheet		*activeWorkSheet;		// keep last one active
-	xlsSummaryInfo		*summary;
+	xlsWorkBook			*_workBook;
+	uint32_t			_numSheets;
+	uint32_t			_activeWorkSheetID;		// keep last one active
+	xlsWorkSheet		*_activeWorkSheet;		// keep last one active
+	xlsSummaryInfo		*_summary;
 	
-	BOOL				iterating;
-	uint32_t			lastRowIndex;
-	uint32_t			lastColIndex;
+	BOOL				_iterating;
+	uint32_t			_lastRowIndex;
+	uint32_t			_lastColIndex;
 	
-	NSStringEncoding	encoding;
+	NSStringEncoding	_encoding;
 }
 
 + (DHxlsReader *)xlsReaderWithPath:(NSString *)filePath
@@ -91,24 +91,24 @@
 - (id)init
 {
 	if((self = [super init])) {
-		activeWorkSheetID = DHWorkSheetNotFound;
-		encoding = NSUTF8StringEncoding;
+		_activeWorkSheetID = DHWorkSheetNotFound;
+		_encoding = NSUTF8StringEncoding;
 	}
 	return self;
 }
 - (void)dealloc
 {
-	xls_close_summaryInfo(summary);
-	xls_close_WS(activeWorkSheet);
-	xls_close_WB(workBook);
+	xls_close_summaryInfo(_summary);
+	xls_close_WS(_activeWorkSheet);
+	xls_close_WB(_workBook);
 }
 
 - (void)setWorkBook:(xlsWorkBook *)wb
 {
-	workBook = wb;
-	xls_parseWorkBook(workBook);
-	numSheets = workBook->sheets.count;
-	summary = xls_summaryInfo(workBook);
+	_workBook = wb;
+	xls_parseWorkBook(_workBook);
+	_numSheets = _workBook->sheets.count;
+	_summary = xls_summaryInfo(_workBook);
 }
 
 - (NSString *)libaryVersion
@@ -119,51 +119,51 @@
 // Sheet Information
 - (uint32_t)numberOfSheets
 {
-	return numSheets;
+	return _numSheets;
 }
 
 - (NSString *)sheetNameAtIndex:(uint32_t)idx
 {
-	return idx < numSheets ? [NSString stringWithCString:(char *)workBook->sheets.sheet[idx].name encoding:encoding] : nil;
+	return idx < _numSheets ? [NSString stringWithCString:(char *)_workBook->sheets.sheet[idx].name encoding:_encoding] : nil;
 }
 
 - (uint16_t)rowsForSheetAtIndex:(uint32_t)idx
 {
     [self openSheet:idx];
-    NSUInteger numRows = activeWorkSheet->rows.lastrow + 1;
-	return idx < numSheets ? numRows : 0;
+    NSUInteger numRows = _activeWorkSheet->rows.lastrow + 1;
+	return idx < _numSheets ? numRows : 0;
 }
 
 - (BOOL)isSheetVisibleAtIndex:(NSUInteger)idx
 {
-	return idx < numSheets ? (BOOL)workBook->sheets.sheet[idx].visibility : NO;
+	return idx < _numSheets ? (BOOL)_workBook->sheets.sheet[idx].visibility : NO;
 }
 
 - (void)openSheet:(uint32_t)sheetNum
 {	
-	if(sheetNum >= numSheets) {
-		iterating = true;
-		lastColIndex = UINT32_MAX;
-		lastRowIndex = UINT32_MAX;
+	if(sheetNum >= _numSheets) {
+		_iterating = true;
+		_lastColIndex = UINT32_MAX;
+		_lastRowIndex = UINT32_MAX;
 	} else
-	if(sheetNum != activeWorkSheetID) {
-		activeWorkSheetID = sheetNum;
-		xls_close_WS(activeWorkSheet);
-		activeWorkSheet = xls_getWorkSheet(workBook, sheetNum);
-		xls_parseWorkSheet(activeWorkSheet);
+	if(sheetNum != _activeWorkSheetID) {
+		_activeWorkSheetID = sheetNum;
+		xls_close_WS(_activeWorkSheet);
+		_activeWorkSheet = xls_getWorkSheet(_workBook, sheetNum);
+		xls_parseWorkSheet(_activeWorkSheet);
 	}
 }
 
 - (uint16_t)numberOfRowsInSheet:(uint32_t)sheetIndex
 {
     [self openSheet:sheetIndex];
-    return activeWorkSheet->rows.lastrow + 1;
+    return _activeWorkSheet->rows.lastrow + 1;
 }
 
 - (uint16_t)numberOfColsInSheet:(uint32_t)sheetIndex
 {
     [self openSheet:sheetIndex];
-    return activeWorkSheet->rows.lastcol + 1;
+    return _activeWorkSheet->rows.lastcol + 1;
 }
 
 // Random Access
@@ -178,12 +178,12 @@
 	
 	--row, --col;
 	
-	NSUInteger numRows = activeWorkSheet->rows.lastrow + 1;
-	NSUInteger numCols = activeWorkSheet->rows.lastcol + 1;
+	NSUInteger numRows = _activeWorkSheet->rows.lastrow + 1;
+	NSUInteger numCols = _activeWorkSheet->rows.lastcol + 1;
 
 	for (NSUInteger t=0; t<numRows; t++)
 	{
-		xlsRow *rowP = &activeWorkSheet->rows.row[t];
+		xlsRow *rowP = &_activeWorkSheet->rows.row[t];
 		for (NSUInteger tt=0; tt<numCols; tt++)
 		{
 			xlsCell	*cell = &rowP->cells.cell[tt];
@@ -226,11 +226,11 @@
 {
 	if(sheetNum != DHWorkSheetNotFound) {
 		[self openSheet:sheetNum];
-		iterating = true;
-		lastColIndex = 0;
-		lastRowIndex = 0;
+		_iterating = true;
+		_lastColIndex = 0;
+		_lastRowIndex = 0;
 	} else {
-		iterating = false;
+		_iterating = false;
 	}
 }
 
@@ -238,27 +238,27 @@
 {
 	DHcell *content = [DHcell blankCell];
 
-	if(!iterating) return nil;
+	if(!_iterating) return nil;
 	
-	NSUInteger numRows = activeWorkSheet->rows.lastrow + 1;
-	NSUInteger numCols = activeWorkSheet->rows.lastcol + 1;
+	NSUInteger numRows = _activeWorkSheet->rows.lastrow + 1;
+	NSUInteger numCols = _activeWorkSheet->rows.lastcol + 1;
 
-	if(lastRowIndex >= numRows) return content;
+	if(_lastRowIndex >= numRows) return content;
 	
-	for (NSUInteger t=lastRowIndex; t<numRows; t++)
+	for (NSUInteger t=_lastRowIndex; t<numRows; t++)
 	{
-		xlsRow *rowP = &activeWorkSheet->rows.row[t];
-		for (uint32_t tt=lastColIndex; tt<numCols; tt++)
+		xlsRow *rowP = &_activeWorkSheet->rows.row[t];
+		for (uint32_t tt=_lastColIndex; tt<numCols; tt++)
 		{
 			xlsCell	*cell = &rowP->cells.cell[tt];
 			
 			if(cell->id == 0x201) continue;
-			lastColIndex = tt + 1;
+			_lastColIndex = tt + 1;
 			[self formatContent:content withCell:cell];
 			return content;
 		}
-		++lastRowIndex;
-		lastColIndex = 0;
+		++_lastRowIndex;
+		_lastColIndex = 0;
 	}
 	// don't make iterator false - user can keep asking for cells, they all just be blank ones though
 	return content;
@@ -331,15 +331,15 @@
 }
 
 // Summary Information
-- (NSString *)appName		{ return summary->appName	? [NSString stringWithCString:(char *)summary->appName		encoding:NSUTF8StringEncoding] : @""; }
-- (NSString *)author		{ return summary->author	? [NSString stringWithCString:(char *)summary->author		encoding:NSUTF8StringEncoding] : @""; }
-- (NSString *)category		{ return summary->category	? [NSString stringWithCString:(char *)summary->category		encoding:NSUTF8StringEncoding] : @""; }
-- (NSString *)comment		{ return summary->comment	? [NSString stringWithCString:(char *)summary->comment		encoding:NSUTF8StringEncoding] : @""; }
-- (NSString *)company		{ return summary->company	? [NSString stringWithCString:(char *)summary->company		encoding:NSUTF8StringEncoding] : @""; }
-- (NSString *)keywords		{ return summary->keywords	? [NSString stringWithCString:(char *)summary->keywords		encoding:NSUTF8StringEncoding] : @""; }
-- (NSString *)lastAuthor	{ return summary->lastAuthor? [NSString stringWithCString:(char *)summary->lastAuthor	encoding:NSUTF8StringEncoding] : @""; }
-- (NSString *)manager		{ return summary->manager	? [NSString stringWithCString:(char *)summary->manager		encoding:NSUTF8StringEncoding] : @""; }
-- (NSString *)subject		{ return summary->subject	? [NSString stringWithCString:(char *)summary->subject		encoding:NSUTF8StringEncoding] : @""; }
-- (NSString *)title			{ return summary->title		? [NSString stringWithCString:(char *)summary->title		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)appName		{ return _summary->appName	? [NSString stringWithCString:(char *)_summary->appName		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)author		{ return _summary->author	? [NSString stringWithCString:(char *)_summary->author		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)category		{ return _summary->category	? [NSString stringWithCString:(char *)_summary->category		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)comment		{ return _summary->comment	? [NSString stringWithCString:(char *)_summary->comment		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)company		{ return _summary->company	? [NSString stringWithCString:(char *)_summary->company		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)keywords		{ return _summary->keywords	? [NSString stringWithCString:(char *)_summary->keywords		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)lastAuthor	{ return _summary->lastAuthor? [NSString stringWithCString:(char *)_summary->lastAuthor	encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)manager		{ return _summary->manager	? [NSString stringWithCString:(char *)_summary->manager		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)subject		{ return _summary->subject	? [NSString stringWithCString:(char *)_summary->subject		encoding:NSUTF8StringEncoding] : @""; }
+- (NSString *)title			{ return _summary->title		? [NSString stringWithCString:(char *)_summary->title		encoding:NSUTF8StringEncoding] : @""; }
 
 @end
