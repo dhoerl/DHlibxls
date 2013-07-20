@@ -41,6 +41,8 @@
 - (NSUInteger)numberOfSheets;
 - (NSString *)sheetNameAtIndex:(NSUInteger)index;
 - (BOOL)isSheetVisibleAtIndex:(NSUInteger)index;
+- (NSUInteger)numberOfRowsInSheet:(NSUInteger)sheetIndex;
+- (NSUInteger)numberOfColsInSheet:(NSUInteger)sheetIndex;
 
 // Random Access
 - (DHcell *)cellInWorkSheetIndex:(NSUInteger)sheetNum row:(uint16_t)row col:(uint16_t)col;		// uses 1 based indexing!

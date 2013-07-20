@@ -133,6 +133,18 @@
 	}
 }
 
+- (NSUInteger)numberOfRowsInSheet:(NSUInteger)sheetIndex
+{
+    [self openSheet:sheetIndex];
+    return activeWorkSheet->rows.lastrow + 1;
+}
+
+- (NSUInteger)numberOfColsInSheet:(NSUInteger)sheetIndex
+{
+    [self openSheet:sheetIndex];
+    return activeWorkSheet->rows.lastcol + 1;
+}
+
 // Random Access
 - (DHcell *)cellInWorkSheetIndex:(NSUInteger)sheetNum row:(uint16_t)row col:(uint16_t)col
 {
