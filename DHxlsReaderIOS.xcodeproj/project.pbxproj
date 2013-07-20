@@ -64,7 +64,7 @@
 		DEB78B4E14BBA42300845894 /* DHcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHcell.h; sourceTree = "<group>"; };
 		DEB78B4F14BBA42300845894 /* DHcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHcell.m; sourceTree = "<group>"; };
 		DEB78B5214BBA58300845894 /* DHcell-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DHcell-Private.h"; sourceTree = "<group>"; };
-		DEB78B6314BC72D000845894 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		DEB78B6314BC72D000845894 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				DE2A39651502846600E4AF15 /* config.h */,
-				DEB78B6314BC72D000845894 /* README */,
+				DEB78B6314BC72D000845894 /* README.md */,
 				DEB78AC414BB9ABF00845894 /* DHxlsReaderIOS */,
 				DEB78ACF14BB9E6200845894 /* libxls */,
 				DEB78AC514BB9ABF00845894 /* Supporting Files */,

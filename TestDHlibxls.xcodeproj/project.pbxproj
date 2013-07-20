@@ -20,10 +20,17 @@
 		DEB78B8514BC7D4400845894 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78B8414BC7D4400845894 /* AppDelegate.m */; };
 		DEB78B8814BC7D4400845894 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78B8714BC7D4400845894 /* ViewController.m */; };
 		DEB78B8B14BC7D4400845894 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB78B8914BC7D4400845894 /* ViewController.xib */; };
-		DEF79AD416E8E60F00E4B803 /* README in Resources */ = {isa = PBXBuildFile; fileRef = DEF79AD316E8E60F00E4B803 /* README */; };
+		DEF79AD416E8E60F00E4B803 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DEF79AD316E8E60F00E4B803 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3DA903E4179AC8B7006C2EF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEB78B9514BC7D9600845894 /* DHxlsReaderIOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 97BCBBE716DD4E9A00FF978C;
+			remoteInfo = DHxlsReader;
+		};
 		DEB78B9914BC7D9700845894 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DEB78B9514BC7D9600845894 /* DHxlsReaderIOS.xcodeproj */;
@@ -71,7 +78,7 @@
 		DEB78B8714BC7D4400845894 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DEB78B8A14BC7D4400845894 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		DEB78B9514BC7D9600845894 /* DHxlsReaderIOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DHxlsReaderIOS.xcodeproj; sourceTree = "<group>"; };
-		DEF79AD316E8E60F00E4B803 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		DEF79AD316E8E60F00E4B803 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA903DB179ABE8F006C2EF2 /* Default-568h@2x.png */,
-				DEF79AD316E8E60F00E4B803 /* README */,
+				DEF79AD316E8E60F00E4B803 /* README.md */,
 				DE9798C514BC7FF8006E5AC2 /* test.xls */,
 				DEB78B9514BC7D9600845894 /* DHxlsReaderIOS.xcodeproj */,
 				DEB78B7A14BC7D4400845894 /* TestDHlibxls */,
@@ -151,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB78B9A14BC7D9700845894 /* libDHxlsReaderIOS.a */,
+				3DA903E5179AC8B7006C2EF2 /* libDHxlsReader.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +217,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		3DA903E5179AC8B7006C2EF2 /* libDHxlsReader.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDHxlsReader.a;
+			remoteRef = 3DA903E4179AC8B7006C2EF2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		DEB78B9A14BC7D9700845894 /* libDHxlsReaderIOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -227,7 +242,7 @@
 				DEB78B7F14BC7D4400845894 /* InfoPlist.strings in Resources */,
 				DEB78B8B14BC7D4400845894 /* ViewController.xib in Resources */,
 				DE97994614BCD72E006E5AC2 /* Icon.png in Resources */,
-				DEF79AD416E8E60F00E4B803 /* README in Resources */,
+				DEF79AD416E8E60F00E4B803 /* README.md in Resources */,
 				3DA903DC179ABE8F006C2EF2 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
