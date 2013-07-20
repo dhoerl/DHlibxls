@@ -65,16 +65,11 @@
 
 + (DHxlsReader *)xlsReaderWithPath:(NSString *)filePath
 {
-	return [self xlsReaderWithPath:filePath encoding:NSUTF8StringEncoding];
-}
-
-+ (DHxlsReader *)xlsReaderWithPath:(NSString *)filePath encoding:(NSStringEncoding)encoding
-{
 	DHxlsReader			*reader;
 	xlsWorkBook			*workBook;
 
 	// NSLog(@"sizeof FORMULA=%zd LABELSST=%zd", sizeof(FORMULA), sizeof(LABELSST) );
-	const char *file = [filePath cStringUsingEncoding:encoding];
+	const char *file = [filePath cStringUsingEncoding:NSUTF8StringEncoding];
 	if((workBook = xls_open(file, "UTF-8"))) {
 		reader = [DHxlsReader new];
 		[reader setWorkBook:workBook];
@@ -84,7 +79,7 @@
 
 + (DHxlsReader *)xlsReaderFromFile:(NSString *)filePath
 {
-	return [self xlsReaderWithPath:filePath encoding:NSUTF8StringEncoding];
+	return [self xlsReaderWithPath:filePath];
 }
 
 
