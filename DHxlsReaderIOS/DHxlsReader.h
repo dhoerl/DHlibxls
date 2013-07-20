@@ -29,37 +29,6 @@
  */
 
 
-#import "DHcell.h"
+#import "../DHxlsReader/DHxlsReader.h"
 
-@interface DHxlsReader : NSObject
-
-+ (DHxlsReader *)xlsReaderFromFile:(NSString *)filePath;
-
-- (NSString *)libaryVersion;
-
-// Sheet Information
-- (NSUInteger)numberOfSheets;
-- (NSString *)sheetNameAtIndex:(NSUInteger)index;
-- (BOOL)isSheetVisibleAtIndex:(NSUInteger)index;
-
-// Random Access
-- (DHcell *)cellInWorkSheetIndex:(NSUInteger)sheetNum row:(uint16_t)row col:(uint16_t)col;		// uses 1 based indexing!
-- (DHcell *)cellInWorkSheetIndex:(NSUInteger)sheetNum row:(uint16_t)row colStr:(char *)col;		// "A"...."Z" "AA"..."ZZ"
-
-// Iterate through all cells
-- (void)startIterator:(NSUInteger)sheetNum;
-- (DHcell *)nextCell;
-
-// Summary Information
-- (NSString *)appName;
-- (NSString *)author;
-- (NSString *)category;
-- (NSString *)comment;
-- (NSString *)company;
-- (NSString *)keywords;
-- (NSString *)lastAuthor;
-- (NSString *)manager;
-- (NSString *)subject;
-- (NSString *)title;
-
-@end
+#warning "This file is a shim. Please use ../DHxlsReader/DHxlsReader.h instead!"

@@ -1,0 +1,3 @@
+[submodule "libxls"]
+	path = libxls
+	url = https://github.com/JanX2/libxls.git

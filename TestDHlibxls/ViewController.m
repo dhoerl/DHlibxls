@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "DHxlsReaderIOS.h"
+#import "DHxlsReader.h"
 
 extern int xls_debug;
 
@@ -34,7 +34,7 @@ extern int xls_debug;
 
 	// xls_debug = 1; // good way to see everything in the Excel file
 	
-	DHxlsReader *reader = [DHxlsReader xlsReaderFromFile:path];
+	DHxlsReader *reader = [DHxlsReader xlsReaderWithPath:path];
 	assert(reader);
 
 	NSString *text = @"";
