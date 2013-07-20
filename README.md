@@ -16,6 +16,12 @@ the first time you clone the repository. From then on use
 	git submodule update
 
 to insure it’s up-to-date.
+
+Alternatively, you can clone the official SVN repository into the submodule git repo using
+
+	git svn clone https://libxls.svn.sourceforge.net/svnroot/libxls/trunk/libxls libxls
+
+All of the above commands should be called from within DHlibxls as your working directory.
    
 Run the Test project to see the framework in action (and how to wire it up).
 
