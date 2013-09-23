@@ -4,7 +4,7 @@ This Framework is based on the libxls open source project host on sourceforge.ne
 
   http://sourceforge.net/projects/libxls/
   
-Usage: include the enclosed project in your primary Xcode project. Insure that there is a dependency
+Usage: include the enclosed project in your primary Xcode project. Ensure that there is a dependency
   on it in an Target that uses it. [It does not use categories so no need for "-forceload".]
 
 Building: the github repository includes the libxls source via a git submodule. Don’t forget to 
@@ -15,7 +15,7 @@ the first time you clone the repository. From then on use
 
 	git submodule update
 
-to insure it’s up-to-date.
+to ensure it’s up-to-date.
 
 Alternatively, you can clone the official SVN repository into the submodule git repo using
 
