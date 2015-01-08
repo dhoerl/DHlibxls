@@ -1,5 +1,11 @@
 # DHlibxls - An ObjectiveC Framework that can read MicroSoft Excel(TM) Files.
 
+
+NOTE: this framework is not currently supported, as another developer wanted to take it over and add more features. You can find that new framework here on github: https://github.com/JanX2/JXLS
+
+------
+
+
 This Framework is based on the libxls open source project host on sourceforge.net:
 
   http://sourceforge.net/projects/libxls/
