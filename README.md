@@ -25,14 +25,11 @@ All of the above commands should be called from within DHlibxls as your working 
    
 Run the Test project to see the framework in action (and how to wire it up).
 
-To get step by step instructions on how to include DHxlsReaderIOS.xcodeproj into your Xcode project, see:
-  http://pymatics.com/2011/12/23/tutorial-develop-a-private-framework-for-your-mac-app-using-xcode-4s-workspace-feature/
-
-If you have problems, or you just want to be sure the build should work, open Terminal, cd /tmp, and run this command:
+The included project has a run script that pulls the libxls source from SourceForge. If you don't have svn setup properly that script will fail. To test whether or not its going to work, open Terminal, cd /tmp, and run this command:
 
   svn co https://libxls.svn.sourceforge.net/svnroot/libxls/trunk/libxls libxls
 
-If that does not work then you have to figure out why (did you install the Xcode command line tools?), or maybe it will ask you to confirm the remote side. Once it works without prompting you for any information the project should build.
+If that does not work then you have to figure out why, or maybe it will ask you to confirm the remote side. Once it works without prompting you for any information the project should build.
 
 
 ## License
