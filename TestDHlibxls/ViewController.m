@@ -30,7 +30,8 @@ extern int xls_debug;
     [super viewDidLoad];
 
 	NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"test.xls"];
-//	NSString *path = @"/tmp/test.xls";
+//	NSString *path = @"/Volumes/Data/Users/dhoerl/Downloads/TestData.xls";
+//	NSString *path = @"/tmp/xls.xls";
 
 	// xls_debug = 1; // good way to see everything in the Excel file
 	
@@ -52,7 +53,7 @@ extern int xls_debug;
 	
 	text = [text stringByAppendingFormat:@"\n\nNumber of Sheets: %u\n", reader.numberOfSheets];
 
-#if 0
+#if 1
 	[reader startIterator:0];
 	
 	while(YES) {
