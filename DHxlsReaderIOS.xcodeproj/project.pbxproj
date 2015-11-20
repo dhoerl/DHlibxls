@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DC5F92E17F0A65900F76FB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC5F92D17F0A65900F76FB1 /* Foundation.framework */; };
 		3DC5F93017F0A7D300F76FB1 /* endian.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DC5F92F17F0A7D300F76FB1 /* endian.c */; };
 		3DC5F93117F0A7D300F76FB1 /* endian.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DC5F92F17F0A7D300F76FB1 /* endian.c */; };
 		97BCBBF816DD4EBD00FF978C /* DHxlsReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78AC814BB9ABF00845894 /* DHxlsReader.m */; };
@@ -16,8 +15,7 @@
 		97BCBBFB16DD4EBD00FF978C /* xls.c in Sources */ = {isa = PBXBuildFile; fileRef = DEB78B1A14BB9E6200845894 /* xls.c */; };
 		97BCBBFC16DD4EBD00FF978C /* xlstool.c in Sources */ = {isa = PBXBuildFile; fileRef = DEB78B1C14BB9E6200845894 /* xlstool.c */; };
 		DE2A39661502846600E4AF15 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2A39651502846600E4AF15 /* config.h */; };
-		DE9798CA14BC839E006E5AC2 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9798C914BC839E006E5AC2 /* libiconv.dylib */; };
-		DEB78AC314BB9ABF00845894 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78AC214BB9ABF00845894 /* Foundation.framework */; };
+		DEB78AC314BB9ABF00845894 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB78AC214BB9ABF00845894 /* Foundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DEB78AC914BB9ABF00845894 /* DHxlsReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB78AC814BB9ABF00845894 /* DHxlsReader.m */; };
 		DEB78B3114BB9E6200845894 /* brdb.c.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB78AEF14BB9E6200845894 /* brdb.c.h */; };
 		DEB78B3214BB9E6200845894 /* brdb.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB78AF014BB9E6200845894 /* brdb.h */; };
@@ -43,6 +41,7 @@
 		97BCBBEC16DD4E9A00FF978C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		97BCBBED16DD4E9A00FF978C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		97BCBBF016DD4E9A00FF978C /* DHxlsReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DHxlsReader-Prefix.pch"; sourceTree = "<group>"; };
+		DE26CBD61BFF68FA008285B1 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		DE2A39651502846600E4AF15 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		DE9798C914BC839E006E5AC2 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		DEB78ABF14BB9ABF00845894 /* libDHxlsReaderIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDHxlsReaderIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DC5F92E17F0A65900F76FB1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE9798CA14BC839E006E5AC2 /* libiconv.dylib in Frameworks */,
 				DEB78AC314BB9ABF00845894 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +143,7 @@
 		DEB78AC114BB9ABF00845894 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE26CBD61BFF68FA008285B1 /* libiconv.tbd */,
 				DE9798C914BC839E006E5AC2 /* libiconv.dylib */,
 				DEB78AC214BB9ABF00845894 /* Foundation.framework */,
 				3DC5F92D17F0A65900F76FB1 /* Foundation.framework */,
@@ -340,86 +338,90 @@
 		97BCBBF416DD4E9A00FF978C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DHxlsReader/DHxlsReader-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.7;
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
 		97BCBBF516DD4E9A00FF978C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DHxlsReader/DHxlsReader-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.7;
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
 		97BCBBF616DD4E9A00FF978C /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DHxlsReader/DHxlsReader-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.7;
+				VALID_ARCHS = x86_64;
 			};
 			name = Distribution;
 		};
@@ -427,7 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -438,7 +440,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DHxlsReaderIOS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -459,7 +461,10 @@
 				DSTROOT = /tmp/DHxlsReaderIOS.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DHxlsReaderIOS/DHxlsReaderIOS-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-llibiconv",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -469,7 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -486,7 +491,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -504,7 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -515,7 +520,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DHxlsReaderIOS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -536,7 +541,10 @@
 				DSTROOT = /tmp/DHxlsReaderIOS.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DHxlsReaderIOS/DHxlsReaderIOS-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-llibiconv",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -549,7 +557,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DHxlsReaderIOS/DHxlsReaderIOS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-llibiconv",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
