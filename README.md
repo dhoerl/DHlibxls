@@ -1,4 +1,12 @@
-# DHlibxls - An ObjectiveC Framework that can read MicroSoft Excel(TM) Files.
+# DHlibxls - An ObjectiveC Framework that can read Microsoft Excel(TM) Files.
+
+1 March 2020:
+
+The library is now under management by Evan Miller, on github at this location: https://github.com/libxls/libxls
+
+Unsure this moment how to build the libary as a submodule, will look at it in the future.
+
+Somewhat out of date below:
 
 This Framework is based on the libxls open source project host on sourceforge.net:
 
